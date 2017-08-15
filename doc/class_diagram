@@ -1,0 +1,68 @@
+@startuml
+
+class AgentWeb{
+    Agent agent
+    Actions actions
+    Helper helper
+}
+
+class Bulle{
+    DOMElement element
+    String id
+    void resetBulle()
+}
+
+class Character{
+    DOMElement element
+    String id
+}
+
+class Question{
+    DOMElement element
+    String id
+    Array xml
+}
+
+class Agent{
+    String id
+    Array xml
+    Bulle bulle
+    Character character
+    Question question
+    DOMElement laBulle,laQuestion,leCharacter
+    void setBulle(bulle)
+    void setCharacter(character)
+    void setForm(question)
+    void tell(something,mute)
+    void dragPosition()
+}
+
+class Actions{
+    void loadAllActions(agent,xml)
+    String getMsg(action)
+    boolean sayMsgOrNot(action)
+    void tellMsg(agent,msg,bool)
+    String getEvent(action)
+    String getAnim(action)
+    Int getDuration(action)
+    void idle(agentWeb,xml,action)
+    void playAnim(agent,action)
+    void resetIrena(agent,time)
+    void doAction(agent,action)
+    void drag(agentWeb,xml,action)
+}
+
+class Helper{
+    void setVoice(xml)
+    XMLHttpRequest getXMLHttp()
+    XMLObject getXML(path)
+    String getAnswerAnimationFromQuestionFromXML(question,xml)
+}
+
+AgentWeb "1" *-- "1" Actions : contains
+AgentWeb "1" *-- "1" Helper : contains
+AgentWeb "1" *-- "1" Agent : contains
+Agent "1" *-- "1" Character : contains
+Agent "1" *-- "1" Question : contains
+Agent "1" *-- "1" Bulle : contains
+@enduml

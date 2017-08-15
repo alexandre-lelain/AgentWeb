@@ -1,0 +1,5 @@
+@startuml
+
+Développeur -> Interface de configuration : paramétrage du plugin
+
+@enduml

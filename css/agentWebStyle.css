@@ -1,0 +1,38 @@
+#agentWeb{
+  position: absolute;
+  left:60%;
+  top:20%;
+}
+
+#question{
+  color:#595959;
+  border:solid;
+  border-radius:8px;
+  padding-left:5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  position: relative;
+  z-index: 9999;
+  top:-20px;
+  width: 230px;
+  box-sizing: content-box;
+}
+
+#agent{
+    background: no-repeat;
+    height : 300px;
+    width: 200px;
+    margin-left: 45px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    text-indent: -9999px;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+#closeIcon{
+  position: relative;
+  margin-left: 220px;
+  cursor: pointer;
+}

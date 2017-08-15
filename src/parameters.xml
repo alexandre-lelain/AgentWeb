@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<agentWebParams>
+	<userSpeech>true</userSpeech>
+	<agentSpeech>true</agentSpeech>
+	<agentWrite>true</agentWrite>
+	<language>fr</language>
+</agentWebParams>

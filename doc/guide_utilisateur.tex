@@ -1,0 +1,285 @@
+\documentclass[11pt,dvipsnames,svgnames]{report}
+
+%PRÉAMBULE
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[normalem]{ulem}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{ulem}
+\usepackage{eurosym}
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage{amssymb,amsmath,latexsym}
+\usepackage{mathrsfs}
+\usepackage[a4paper]{geometry}
+\usepackage[bottom]{footmisc}
+\usepackage{perpage}
+\usepackage{multicol}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[breaklinks]{hyperref}
+\usepackage[final]{pdfpages} 
+\usepackage{appendix}
+\usepackage{caption}
+\usepackage{minitoc}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{epsfig}
+\usepackage{menukeys}
+\usepackage{etoolbox}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{frame=tb,
+  language=Java,
+  escapeinside={<@}{@>},
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=none,
+  commentstyle=\color{green}\ttfamily,,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=false,
+  breakatwhitespace=true,
+  rulecolor=\color{black},
+  tabsize=3,
+  literate={à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {è}{{\`e}}1
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  escapeinside={<@}{@>},
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  commentstyle=\color{green}\ttfamily,
+  rulecolor=\color{black},
+  literate={à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {è}{{\`e}}1,
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+\geometry{hmargin=2.5cm,vmargin=2cm}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+
+% En-têtes et pieds-de-page
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{\small{\leftmark}}
+\fancyhead[R]{\includegraphics[scale=0.2]{images/logoasi.png}}
+\fancyhfoffset{0pt}
+\fancyfoot[R]{\setstretch{0,8}\small{Alexandre Le Lain}}
+\fancyfoot[L]{\includegraphics[scale=0.14]{images/LogoINSA.png}}
+\renewcommand{\headrule}{{%
+ \color{black}\hrule \headwidth \headrulewidth \vskip-\headrulewidth}}
+\titleformat{\section}%
+[hang]% style du titre (hang, display, runin, leftmargin, drop, wrap)
+{\Large\bfseries}%changement de fonte commun au numéro et au titre
+{\thesection}% spécification du numéro
+{1em}% espace entre le numéro et le titre
+{}% changement de fonte du titre
+
+
+\begin{document}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+\center 
+\vspace*{\stretch{1}}\textsc{\huge Institut National des Sciences Appliquées de Rouen}\\[0.7cm] 
+\LARGE Département ASI~\\[0.5cm]
+\Large{Architecture des Systèmes d'Information} ~\\[1.5cm]
+\textsc{\Large PAO}\\[0.5cm] 
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Guide de l'utilisateur}\\[0.18cm] \HRule \\[1.5cm]
+ 
+\LARGE \emph{\textbf{Projet}} \\
+{Agent Web}\\[1.3cm]
+
+\large
+	\emph{\textbf{Auteur}}\\
+	Alexandre \textsc{Le Lain}\\[0.3cm]
+	
+~\\[0.5cm]
+\Large \emph{\textbf{Version}}\\
+	\textsc{v3.1}
+
+\vfill{\today} 
+
+\begin{figure}
+\includegraphics[width=4cm]{images/LogoINSA.png}\hfill
+\includegraphics[width=3cm]{images/logoasi.png}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+
+\vspace*{\stretch{1}} 
+ \end{titlepage}
+
+\newpage
+\tableofcontents
+
+\newpage
+
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+	Ce projet, tutoré par Alexandre Pauchet, enseignant chercheur à l'INSA Rouen Normandie est réalisé dans le cadre de la formation ASI de l'INSA Rouen en tant que PAO.\\ 
+	
+	Il s'agit d'un plugin JavaScript dont le but est d'apporter aux développeurs d'applications Web des outils pour assister les utilisateurs de leurs produits. Ce document constitue le guide d'installation de ce plugin, et contient toutes les instructions nécessaires pour son utilisation.
+	
+\chapter{Installation du plugin}
+
+\begin{enumerate}  
+\item Placez le plugin à la racine de votre projet.
+\item Dans votre page web :
+	\begin{enumerate}
+	\item Soyez sûr d'avoir linké les libraires suivantes : JQuery et JQuery UI. Sinon voici leur liens :\\
+\begin{lstlisting}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+ 		href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+\end{lstlisting} 
+\item  Linkez de plus la librairie TTS suivante à la suite dans votre page web :\\
+\begin{lstlisting}
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+\end{lstlisting}
+\item Voici l'appel au plugin que vous pouvez mettre soit à la suite, soit dans le footer de votre page web :\\
+\begin{lstlisting}
+<script src="agentWeb/js/script-agentWeb.js" ></script>
+\end{lstlisting}
+\end{enumerate}
+\item Votre projet doit être situé côté serveur\\
+\item Si vous décidez de renommer le plugin, faites la modification dans le fichier [nomDuPlugin]/js/script-agentWeb.js à la ligne 7\\
+\end{enumerate}
+
+\chapter{Personnalisation du plugin et de ses fonctionnalités}
+
+\section{Personnalisation des fonctionnalités intégrées au plugin}
+   Vous pouvez personnaliser le plugin en utilisant l'interface conçue à cet effet "configuration.php" située à la racine du plugin (ie \textit{agentWeb/}), ou tout simplement éditer directement les fichiers xml dans \textit{agentWeb/src/}.\\
+   
+   
+\begin{figure}[H]
+\centerline{\includegraphics[width=1\textwidth]{images/conf.png}}
+\caption{L'interface de personnalisation du plugin}
+\end{figure}
+   
+ 
+\section{Ajout de nouvelles fonctionnalités en utilisant l'api du plugin}
+   
+   Le plugin propose un agent web qui est capable d’interagir avec l'utilisateur à travers un ensemble d'actions. Une action se caractérise par une animation (un gif), une durée d'animation, un message que l'agent peut prononcer oralement ou non, et d'un event  qui correspond à l’événement qui déclenche cette action (ce dernier est cependant optionnel).\\
+   
+   Le plugin possède déjà par défaut quelques actions telles que la réaction lorsqu'on lui clique dessus, lorsqu'on écrit dans un champ texte ou lorsqu'on le déplace.\\
+   
+   Cependant, si vous le souhaitez, vous pouvez ajouter vos propres actions en suivant ces 2 étapes :\\
+   
+   \begin{enumerate} 
+   \item Vous devez tout d'abord ajouter les options de votre nouvelle fonctionnalité dans le fichier \textit{agentWeb/src/actions.xml} tel que respectant le pattern suivant :\\
+   \lstset{language=XML}   
+   \begin{lstlisting}
+   <action>
+   		<name>[NOM DE VOTRE FONCTION]</name> <@\textcolor{violet}{// le nom de votre action}@>
+   		<on>[TRUE/FALSE]</on> <@\textcolor{violet}{// True pour activer votre fonction, false sinon.}@>
+   		<msg>[MSG AGENT]</msg> <@\textcolor{violet}{// Le message que l'agent web dira}@>
+   		<say>[TRUE/FALSE]</say> <@\textcolor{violet}{// True si vous voulez faire parler l'agent, false sinon.}@>
+   		<event>[EVENT DE VOTRE FONCTION]</event> <@\textcolor{violet}{// Optionnel : remplissez ce champ si 
+   		vous voulez que votre action se produise à un moment très précis 
+   		sous certaines conditions.}@>
+   		<animation>
+   			<anim>[ANIMATION - CF images/]</anim> <@\textcolor{violet}{// l'animation jouée dans votre action}@>
+   			<duration>[DUREE DE L'ANIMATION]</duration> <@\textcolor{violet}{// sa durée}@>
+   		</animation>
+   </action>
+   \end{lstlisting}
+   \item Ensuite, vous pouvez tout simplement implémenter votre fonction dans le fichier \textit{agentWeb/js/utils/actions.js} respectant le pattern suivant :
+   \begin{lstlisting}
+   fonction [NOM DE VOTRE FONCTION](agentWeb,xml,action){
+   ...
+   }
+   \end{lstlisting}
+   \textbf{Très important} : le nom de votre fonction dans le .js doit être le même que dans le .xml pour que votre fonction soit appelée automatiquement. les variables en entrée sont les suivantes :
+   \begin{itemize}
+   \item \textbf{agentWeb} : c'est l'objet de la classe Agent : cf \textit{agentWeb/js/classes/Agent.js} pour connaître son contenu;
+   \item \textbf{xml} : contient toutes les données de tous les fichiers xml de \textit{agentWeb/src/};
+   \item \textbf{action} : contient tous les paramètres de votre fonction définis à l'étape 1;
+   \end{itemize}
+ \end{enumerate}
+ 
+ \section{L'API disponible}
+ 
+ 	Voici les fonctions disponibles qui vous aideront à créer une nouvelle fonctionnalité pour l'agent web :
+ 	\bigskip
+   \begin{lstlisting}
+   tellMsg(agentWeb,msg,bool)
+   \end{lstlisting}
+   \begin{itemize}
+   \item \textbf{agentWeb} : l'objet agentWeb de la classe Agent
+   \item \textbf{msg} : le message que vous voulez que l'agent web affiche
+   \item \textbf{bool} : true si vous voulez que l'agent web récite le message à l'oral, false sinon\\
+   \end{itemize}
+   Cette fonction vous permet de faire dire à l'agent web un message.\\
+   \bigskip
+   \begin{lstlisting}
+   playAnim(agentWeb,action)
+   \end{lstlisting}
+   \begin{itemize}
+   \item \textbf{agentWeb} : l'objet agentWeb de la classe Agent
+   \item \textbf{action} : l'objet SimpleXMLElement contenant l'ensemble des balises\\
+    (<on>,<msg>,<animation>,etc...) de votre action que vous avez renseigné dans le xml.\\ Vous pouvez utiliser les fonctions décrites plus bas pour utiliser cet objet facilement.\\
+   \end{itemize}
+   Cette fonction vous permet de jouer l'animation de votre fonction définie dans le xml.\\
+   \bigskip
+   \begin{lstlisting}
+   doAction(agentWeb,action)
+   \end{lstlisting}
+   \begin{itemize}
+   \item \textbf{agentWeb} : même objet que celui cité dans la fonction précédente
+   \item \textbf{action} : même objet que celui cité dans la fonction précédente\\
+   \end{itemize}
+   Cette fonction appelle les 2 fonctions listées précédemment : elle permet d'appeler à la fois la fonction qui fait parler l'agent et celle qui joue l'animation. \\
+   \bigskip
+   \begin{lstlisting}
+   getMsg(action)
+   sayMsgOrNot(action)
+   getEvent(action)
+   getAnim(action)
+   getDuration(action)
+   \end{lstlisting}
+   \begin{itemize}
+   \item \textbf{action} : l'objet SimpleXMLElement contenant l'ensemble des balises\\
+    (<on>,<msg>,<animation>,etc...) de votre action que vous avez renseigné dans le xml.\\
+   \end{itemize}
+   Ces fonctions vous permettent d'obtenir directement les paramètres de votre action définis dans le xml sans avoir à connaître la façon dont on manipule un objet SimpleXMLElement.
+\end{document}

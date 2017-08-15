@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ma page web</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- JQuery min and ui links are required -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<!-- link to tts function -->
+		<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	</head>
+
+	<body>
+
+		<h1>Livre d'or</h1>
+		<form style="display:inline-block;">
+			<fieldset>
+				<legend>Coordonnées :</legend>
+				<label for="champNom">Name:</label> <tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td><input type="text" name="Name" id="champNom" placeholder="Saisissez votre nom"/></tr></td><br/>
+				<label for="champEmail">E-mail:</label> <tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td><input type="email" name="Email" id="champEmail" placeholder="Saisissez votre e-mail"/></tr></td><br/>
+				<label for="champOui">Etudiant:</label>
+				<tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>
+					<label for="champOui">Oui</label> <input type="radio" name="choixouinon" id="champOui"/>
+					<label for="champNon">Non</label> <input type="radio" name="choixouinon" id="champNon"/>
+				</tr></td><br/>
+
+				<label>Année:</label>
+				<tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>
+					<select name="listeAnnee" size="1">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</tr></td>
+			</fieldset>
+			<br/>
+			<fieldset>
+				<legend>Message :</legend>
+				<textarea name="message" rows="7" cols="50"></textarea><br/></br>
+				<label for="copie">Je souhaite recevoir une copie du message :</label><input type="checkbox" name="copie" id="copie"/>
+			</fieldset>
+		</form>
+
+		<br/></br>
+		<input type="submit" name="poster" id="poster" value="Poster le message"/>
+	</body>
+
+	<!-- loading agentWeb script -->
+	<footer>
+		 <script src="js/script-agentWeb.js" ></script>
+	</footer>
+</html>

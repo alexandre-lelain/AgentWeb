@@ -1,0 +1,27 @@
+<agentWebDialog>
+	<dialog>
+		<question>name</question>
+		<answer>My name is Irena</answer>
+		<animation>shake</animation>
+  </dialog>
+  <dialog>
+		<question>hello</question>
+		<answer>Heya Alex !</answer>
+  </dialog>
+	<dialog>
+		<question>how are you ?</question>
+		<answer>I'm fine, thanks.</answer>
+	</dialog>
+	<dialog>
+		<question>help</question>
+		<answer>What is the matter ?</answer>
+	</dialog>
+	<dialog>
+		<question>creator</question>
+		<answer>My creator is Alex</answer>
+	</dialog>
+	<dialog>
+		<question>secret</question>
+		<answer>You found the secret</answer>
+	</dialog>
+</agentWebDialog>

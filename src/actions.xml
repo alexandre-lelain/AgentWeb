@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  README
+
+/!\ Please do not change the order of actions /!\
+
+<name> Do not change anything here !
+<on> Set it to true if you want to enable it, false if not.
+<msg> Write the String you want the agent to say when event is triggered
+<anim> Set the animation you wanna play for the action - see /images
+<duration> Set the duration of animation (milliseconds) - leave empty for infinite loop
+-->
+<actions>
+  <action>
+    <name>sayHi</name>
+    <on>true</on>
+    <msg>Bonjour, je suis à votre service !</msg>
+    <say>true</say>
+    <animation>
+      <anim>success</anim>
+      <duration>3000</duration>
+    </animation>
+  </action>
+  <action>
+    <name>idle</name>
+    <on>true</on>
+    <anim>idle</anim>
+  </action>
+  <action>
+    <name>drag</name>
+    <on>true</on>
+    <msg>Attention je suis fragile voyons !</msg>
+    <say>true</say>
+    <animation>
+      <anim>walk</anim>
+      <duration>8000</duration>
+    </animation>
+  </action>
+  <action>
+    <name>onClickCharacter</name>
+    <on>true</on>
+    <msg>Vous m'avez cliqué dessus, honte à vous !</msg>
+    <say>true</say>
+    <animation>
+      <anim>noIdea</anim>
+      <duration>2000</duration>
+    </animation>
+  </action>
+  <action>
+    <name>onQuestionKeyPressed</name>
+    <on>true</on>
+  </action>
+  <action>
+    <name>onWatchInputText1</name>
+    <on>true</on>
+    <msg>Je surveille votre saisie...</msg>
+    <say>false</say>
+    <event>input:text</event>
+    <animation>
+      <anim>thinking</anim>
+      <duration>5000</duration>
+  </animation>
+  </action>
+  <action>
+    <name>onWatchInputText2</name>
+    <on>true</on>
+    <msg>Vous avez l'air d'avoir beaucoup de choses à dire...</msg>
+    <say>false</say>
+    <event>textarea</event>
+    <animation>
+      <anim>thinking</anim>
+      <duration>5000</duration>
+    </animation>
+  </action>
+  <action>
+    <name>onWatchInputEmail</name>
+    <on>true</on>
+    <success>
+      <msg>Email correct !</msg>
+      <say>true</say>
+      <animation>
+        <anim>success</anim>
+        <duration>5000</duration>
+      </animation>
+    </success>
+    <fail>
+      <msg>Email incorrect !</msg>
+      <say>false</say>
+      <animation>
+        <anim>panic</anim>
+        <duration>5000</duration>
+      </animation>
+    </fail>
+  </action>
+</actions>
