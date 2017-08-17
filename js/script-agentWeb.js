@@ -1,10 +1,7 @@
-/* 2013 - 2015 Authors : Cédric Cousseran, Alexandre Guignebert, Lucie Le Borgne et Nicolas Monet
-*  2017 Author : Alexandre Le Lain
-*  Tutor: Alexandre Pauchet
-*  ASI 4 */
+/* Author : Alexandre Le Lain */
 
 // set the name of the plugin folder's name. Default is "agentWeb".
-var pluginName = "agentWeb";
+var pluginName = ".";
 
 $(document).ready(function(){
     $(document.body).append("<div id='agentWeb' class='animation' ></div>")
@@ -52,7 +49,7 @@ jQuery.fn.agentWebINSA = function(){
    var character = new Character("div","agent");
    var bulle = new Bulle("div","answer");
 
-   $(agentWeb.element).append("<img id='closeIcon' src='agentWeb/images/close-icon.png' onclick='closeAgent(agentWeb)'/>");
+   $(agentWeb.element).append("<img id='closeIcon' src='./images/close-icon.png' onclick='closeAgent(agentWeb)'/>");
    agentWeb.setCharacter(character);
    agentWeb.setForm(inputText);
    agentWeb.setBulle(bulle);
