@@ -24,5 +24,6 @@ h1{
 }
 
 body{
-    background-image: url(../images/background.png);
+    background: #757575;
+    height: 100%;
 }
