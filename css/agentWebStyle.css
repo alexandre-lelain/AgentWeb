@@ -12,7 +12,7 @@
   padding-top: 2px;
   padding-bottom: 2px;
   position: relative;
-  z-index: 9999;
+  z-index: 10;
   top:-20px;
   width: 230px;
   box-sizing: content-box;
@@ -28,7 +28,7 @@
     cursor: pointer;
     text-indent: -9999px;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 10;
 }
 
 #closeIcon{

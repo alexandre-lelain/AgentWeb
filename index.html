@@ -6,7 +6,10 @@
 		<!-- JQuery min and ui links are required -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/index.css">
 		<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 	</head>
 
@@ -14,10 +17,38 @@
 		<div style="background:#333333;text-align:center;padding-top:20px;padding-bottom:20px;">
 			<span style="color:white;font-size:2.2em;">Agent Web</span>
 		</div>
+		<div id="modal-agentWeb" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title modal-title-agentWeb">Agent Web</h4>
+          </div>
+          <div class="modal-body modal-body-agentWeb">
+            <strong class="strong1">Description :</strong>
+            <br/><p class="p1">Agent Web est un plugin opensource écrit en Javascript déstiné aux développeurs souhaitant intégrer un assistant personnel à leur site web.</p>
+            <br/><p class="p2">L'agent possède quelques intéractions avec l'utilisateur : il réagit si on lui clique dessus, si on le déplace à l'aide d'un 'drag', et peut répondre à quelques phrases basiques telles que 'comment vas-tu ?', 'hello','help',...</P>
+              <br/><strong class="strong2">Remarque :</strong>
+              <br/><p class="p3">Ce projet est un 'poc (proof of concept)', et n'en est qu'au stade de prototype, c'est pour cela que le nombre d'intéractions de l'agent est très limité, l'objectif étant juste de poser l'architecture (le squelette) de l'assistant web.</P>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-modal btn-primary" data-dismiss="modal">C'est parti</button>
+          </div>
+        </div>
+      </div>
+    </div>
   	</body>
 
 	<footer>
-     <!-- loading agentWeb script -->
-		 <script src="js/script-agentWeb.js" ></script>
+		 <script>
+			 $(document).ready(() => {
+				 $('#modal-agentWeb').modal('show');
+				 $('#modal-agentWeb').on('hidden.bs.modal', function () {
+					 var script = document.createElement('script');
+					 script.src = "js/script-agentWeb.js";
+					 document.head.appendChild(script);
+				});
+    	});
+		 </script>
 	</footer>
 </html>

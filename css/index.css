@@ -1,0 +1,35 @@
+.modal-agentWeb{
+  z-index: 99999;
+}
+
+.modal-header{
+    background: #333333;
+    color: white;
+    text-align: center;
+}
+
+.modal-title{
+    font-weight: bold;
+    font-size: 2.2em;
+}
+
+.close{
+    font-size: 2.2em;
+    color: white;
+}
+
+.modal-body{
+    text-align: left;
+}
+
+.modal-footer{
+    text-align: center;
+}
+
+.btn-modal{
+    font-size: 1.6em;
+    border-radius: 12px;
+    padding: 10px 10px;
+    border: none;
+    box-shadow: none;
+}
